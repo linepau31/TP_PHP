@@ -3,9 +3,9 @@
     <div class="box">
         <?= $message; ?>
         <form method="post" action="" id="myForm">
-            <p><input id="pseudo" type="text" name="pseudo" placeholder="Votre Pseudo" /></p>
+            <p><input id="pseudo" type="text" name="pseudo" placeholder="Votre Pseudo" required /></p>
             <span class="erreurPseudo"></span>
-            <p><input id="password" type="password" name="password" placeholder="Votre Password" /></p>
+            <p><input id="password" type="password" name="password" maxlength="6" placeholder="Votre Password" required /></p>
             <span class="erreurPassword"></span>
             
             <div id="grille">

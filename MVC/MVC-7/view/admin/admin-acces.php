@@ -6,7 +6,9 @@ if(isset($_SESSION['pseudo'])) {
 }
 ?>
 <article>
-	<h1>Admin <i>(Bienvenue <?= $pseudo; ?>)</i></h1>
+	<h1>Mon compte
+        <br>
+        <i><?= $pseudo; ?></i></h1>
     <p><b>Liste des recettes</b></p>
     <ol>
     <?php

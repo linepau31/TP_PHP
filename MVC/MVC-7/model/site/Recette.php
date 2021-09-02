@@ -90,12 +90,45 @@ class Recette {
 			$this->photo = $photo;
 		}
 	}
+    public function setIngredient($ingredient) {
+        if(is_string($ingredient)) {
+            $this->ingredient = $ingredient;
+        }
+    }
+    public function setCout($cout) {
+        if(is_string($cout)) {
+            $this->cout = $cout;
+        }
+    }
+    public function setTemps($temps) {
+        if(is_string($temps)) {
+            $this->temps = $temps;
+        }
+    }
+    public function setPlat($plat) {
+        if(is_string($plat)) {
+            $this->plat = $plat;
+        }
+    }
+    public function setDate($date) {
+        if(is_string($date)) {
+            $this->date = $date;
+        }
+    }
+    public function setEtapes($etapes) {
+        if(is_string($etapes)) {
+            $this->etapes = $etapes;
+        }
+    }
+    public function setDifficulte($difficulte) {
+        if(is_string($difficulte)) {
+            $this->difficulte = $difficulte;
+        }
+    }
 	public function setKeywords($keywords) {
 		if(is_string($keywords)) {
 			$this->keywords = $keywords;
 		}
 	} 
-	
-	
-	// FAIRE LES SUIVANTS
+
 }

@@ -14,24 +14,26 @@
 
     <div id="site">
         <header>
-            <h1>Les Magiciens Du Fouet</h1>
+            <h1><a href="accueil.html">Les Magiciens Du Fouet</a></h1>
         </header>
         <nav>
             <ul>
                 <?php
                 if (isset($_SESSION['pseudo'])) {
                 ?>
-                    <li><a href="deconnexion.html">Quitter</a></li>
-                    <li><a href="creer-recette.html">Créer</a></li>
-                    <li><a href="admin-home.html">Modifier</a></li>
-                    <li><a href="admin-home.html">Supprimer</a></li>
+                    <li><a href="admin-home.html">Recettes</a></li>
+                    <li><a href="creer-recette.html">Ajouter</a></li>
+                    <li><a href="modifier-recette.html">Modifier</a></li>
+                    <li><a href="supprimer-recette.html">Supprimer</a></li>
                     <li><a href="">Changer mon mot de passe</a></li>
+                    <li><a href="deconnexion.html">Quitter</a></li>
                 <?php
                 } else {
                 ?>
-                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="admin.html">Connexion</a></li>
                     <li><a href="Recette.html">Recette</a></li>
-                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="chef.html">Chefs</a></li>
+
                 <?php
                 }
                 ?>
