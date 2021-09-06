@@ -23,10 +23,10 @@ class Admin {
 
 			    $_SESSION['pseudo'] = $_POST['pseudo'];
 				$view = new classe\View('admin', 'admin-acces', 'Zone Admin','Je suis la zone administrateur', 'clé admin 1, clé admin 2');
-				$view->AfficherVue(array('pseudo' => $_SESSION['pseudo'], 'recettes'=>$recettes));
+				$view->AfficherVue(array('pseudo' => $_SESSION['pseudo'], 'recettes'=>$recettes)); // chef
 				$this->AfficherToutesLesRecettes();
 
-			} else {
+			} else { // si c'est pas bon
 				$manager = new ma\MembreManager();
 				$message = $manager->getMsgErreur();
 				$view = new classe\View('admin', 'admin', 'Admin', 'Je suis la desc de l\'admin', 'clé admin 1, clé admin 2');
@@ -40,18 +40,20 @@ class Admin {
 
 /*************** CREATION D'UNE RECETTE ***************/
 	public function CreerRecette() {
-		if( (empty($_POST['titre'])) && (empty($_POST['photo'])) && (empty($_POST['descriptif'])) && (empty($_POST['keywords'])) ) {
+		if( (empty($_POST['titre'])) && (empty($_POST['chef'])) && (empty($_POST['descriptif'])) && (empty($_POST['ingredient'])) && (empty($_POST['etapes'])) && (empty($_POST['keywords'])) ) {
 			$manager = new ms\RecetteManager();
 			$message = $manager->getMsgCreateRecette();
 
-		} elseif( (empty($_POST['titre'])) || (empty($_POST['photo'])) || (empty($_POST['descriptif'])) || (empty($_POST['keywords'])) ) {
+		} elseif( (empty($_POST['titre'])) || (empty($_POST['chef'])) || (empty($_POST['descriptif'])) || (empty($_POST['ingredient'])) || (empty($_POST['etapes'])) || (empty($_POST['keywords'])) ) {
 			$manager = new ms\RecetteManager();
 			$message = $manager->getMsgErreurCreateRecette();
 		} else {
 			$recette = new ms\Recette();
 			$recette->setTitre($_POST['titre']);
-			$recette->setPhoto($_POST['photo']);
+			$recette->setChef($_POST['chef']);
 			$recette->setDescriptif($_POST['descriptif']);
+            $recette->setIngredient($_POST['ingredient']);
+            $recette->setEtapes($_POST['etapes']);
 			$recette->setKeywords($_POST['keywords']);
 			
 			$manager = new ms\RecetteManager();
@@ -73,7 +75,7 @@ class Admin {
 		
 		$view = new classe\View('admin', 'admin-acces', 'Zone Admin', 'Je suis la desc de la zone admin', 'clé zone admin 1, clé zone admin 2');
 		$view->AfficherVue(array('pseudo' => $_SESSION['pseudo'],
-										 'recettes'=>$recettes));
+										 'recettes'=>$recettes)); // Chef
 	}
 
 /****************** ACCES ACCUEIL ADMIN ******************/
@@ -84,17 +86,19 @@ class Admin {
 	public function ModifierRecette() {
 		$manager = new ms\RecetteManager();
 		$recette = $manager->ReadRecette($_GET['id_recette']);
-		if( (empty($_POST['titre'])) && (empty($_POST['photo'])) && (empty($_POST['descriptif'])) && (empty($_POST['keywords'])) ) {
+		if( (empty($_POST['titre'])) && (empty($_POST['chef'])) && (empty($_POST['descriptif'])) && (empty($_POST['ingredient'])) && (empty($_POST['etapes'])) && (empty($_POST['keywords'])) ) {
 			$message = $manager->getMsgCreateRecette();
-		} elseif( (empty($_POST['titre'])) || (empty($_POST['photo'])) || (empty($_POST['descriptif'])) || (empty($_POST['keywords'])) ) {
+		} elseif( (empty($_POST['titre'])) || (empty($_POST['chef'])) || (empty($_POST['descriptif'])) || (empty($_POST['ingredient'])) || (empty($_POST['etapes'])) || (empty($_POST['keywords'])) ) {
 			$message = $manager->getMsgErreurCreateRecette();
 		} else {
 			$recette = new ms\Recette();
 			$recette->setId_recette($_POST['id_recette']);
 			$recette->setTitre($_POST['titre']);
-			$recette->setPhoto($_POST['photo']);
+			$recette->setChef($_POST['chef']);
 			$recette->setDescriptif($_POST['descriptif']);
-			$recette->setKeywords($_POST['keywords']);
+			$recette->setIngredient($_POST['ingredient']);
+            $recette->setEtapes($_POST['etapes']);
+            $recette->setKeywords($_POST['keywords']);
 			
 			$manager->UpdateRecette($recette);
 			

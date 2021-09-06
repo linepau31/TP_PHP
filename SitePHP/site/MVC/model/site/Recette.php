@@ -4,15 +4,10 @@ namespace model\site;
 class Recette {
 	private $id_recette;
 	private $titre;
-	private $photo;
-	private $difficulte;
-	private $temps;
-	private $cout;
+
 	private $ingredient;
 	private $descriptif;
 	private $etapes;
-	private $date;
-	private $plat;
 	private $chef;
 	private $keywords;
 	
@@ -31,33 +26,10 @@ class Recette {
 	public function getIngredient() {
 		return $this->ingredient;
 	}
-	public function getPhoto()
-	{
-		return $this->photo;
-	}
-	public function getDifficulte()
-	{
-		return $this->difficulte;
-	}
-	public function getTemps()
-	{
-		return $this->temps;
-	}
-	public function getCout()
-	{
-		return $this->cout;
-	}
+
 	public function getEtapes()
 	{
 		return $this->etapes;
-	}
-	public function getDate()
-	{
-		return $this->date;
-	}
-	public function getPlat()
-	{
-		return $this->plat;
 	}
 	public function getKeywords()
 	{
@@ -84,45 +56,15 @@ class Recette {
 			$this->descriptif = $descriptif;
 		}
 	}
-	public function setPhoto($photo)
-	{
-		if ($photo > 0) {
-			$this->photo = $photo;
-		}
-	}
+
     public function setIngredient($ingredient) {
         if(is_string($ingredient)) {
             $this->ingredient = $ingredient;
         }
     }
-    public function setCout($cout) {
-        if(is_string($cout)) {
-            $this->cout = $cout;
-        }
-    }
-    public function setTemps($temps) {
-        if(is_string($temps)) {
-            $this->temps = $temps;
-        }
-    }
-    public function setPlat($plat) {
-        if(is_string($plat)) {
-            $this->plat = $plat;
-        }
-    }
-    public function setDate($date) {
-        if(is_string($date)) {
-            $this->date = $date;
-        }
-    }
     public function setEtapes($etapes) {
         if(is_string($etapes)) {
             $this->etapes = $etapes;
-        }
-    }
-    public function setDifficulte($difficulte) {
-        if(is_string($difficulte)) {
-            $this->difficulte = $difficulte;
         }
     }
 	public function setKeywords($keywords) {

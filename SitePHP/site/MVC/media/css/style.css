@@ -53,6 +53,10 @@ article h1 {
 	text-align: center;
 }
 
+article h2{
+	text-align: left;
+}
+
 .lien {
 	color: #000;
 	font-weight: bold;
@@ -60,7 +64,7 @@ article h1 {
 }
 
 .lien:hover {
-	color: rgb(255, 255, 255);
+	color: midnightblue;
 	text-decoration: underline;
 }
 
@@ -71,7 +75,7 @@ article h1 {
 	text-align: center;
 }
 
-input[type='text'], input[type='password'], textarea[name='descriptif'] {
+input[type='text'], input[type='password'], textarea[name='ingredient'], textarea[name='etapes'], textarea[name='descriptif'] {
 	width: 80%;
 	padding: 15px;
 }

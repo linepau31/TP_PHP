@@ -23,7 +23,7 @@ class Accueil {
 		$manager = new ms\RecetteManager();
 		$recette = $manager->ReadRecette($_GET['id_recette']);
 		
-		$view = new classe\View('site', 'voir-recette', $recette->getTitre(), $recette->getDescriptif(), $recette->getKeywords());
+		$view = new classe\View('site', 'voir-recette', $recette->getTitre(), $recette->getDescriptif(), $recette->getChef());
 		$view->AfficherVue(array('recette'=>$recette));
 	}
 

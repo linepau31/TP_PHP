@@ -41,7 +41,7 @@ class Autoloader {
 				case 'admin-home':
 					$namespace = 'controller\admin\Admin';	
 					$methode   = 'AfficherToutesLesRecettes';
-					break;				
+					break;	// chef
 			}	
 		//*** Instanciation de la classe Rooter ***//	
 			$rooter = new classe\Rooter($namespace, $methode);

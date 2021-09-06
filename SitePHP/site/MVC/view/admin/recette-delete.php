@@ -6,7 +6,7 @@ if(isset($_SESSION['pseudo'])) {
 }
 ?>
 <article>
-	<h1>Supprimer la recette #<?= $_GET['id_recette']; ?></h1>
+	<h1>Supprimer la recette N°<?= $_GET['id_recette']; ?></h1>
     <div class="box">
     <?php
 	if(!isset($message)) {
@@ -19,7 +19,8 @@ if(isset($_SESSION['pseudo'])) {
         </form>
         <hr />
         <p><?= $recette->getTitre(); ?></p>
-        <p><?= $recette->getPhoto(); ?></p>
+        <p><?= $recette->getChef(); ?></p>
+        <p><?= $recette->getDescriptif(); ?></p>
     <?php
 	} else { echo $message; } ?>
     </div>

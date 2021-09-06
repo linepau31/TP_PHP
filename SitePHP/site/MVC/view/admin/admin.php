@@ -1,5 +1,5 @@
 <article>
-    <h1>Admin</h1>
+    <h1>Connexion</h1>
     <div class="box">
         <?= $message; ?>
         <form method="post" action="" id="myForm">
@@ -42,14 +42,13 @@
 
             <div id="btn">
 
-                <button type="submit" onClick="validation()">Valider</button>
+                <button type="submit" id="soumission" onClick="validation()">Valider</button>
                 <button type="reset" onClick="effacer()">Effacer</button>
 
             </div>
 
-            <a href=".php" class="text-success">Mot de passe oublié ?</a>
+            <a href=".php">Mot de passe oublié ?</a>
         </form>
     </div>
 </article>
 
-<script src="jquery/script.js"></script>

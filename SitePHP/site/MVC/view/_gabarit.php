@@ -14,7 +14,7 @@
 
     <div id="site">
         <header>
-            <h1><a href="index.php">Les Magiciens Du Fouet</a></h1>
+            <h1><a class="lien" href="index.php">Les Magiciens Du Fouet</a></h1>
         </header>
         <nav>
             <ul>
@@ -23,14 +23,19 @@
                 ?>
                     <li><a href="admin-home.html">Recettes</a></li>
                     <li><a href="creer-recette.html">Ajouter</a></li>
-                    <li><a href="admin-home.html">Modifier</a></li>
-                    <li><a href="admin-home.html">Supprimer</a></li>
+                    <li><a href="admin-home.html">Modifier/Supprimer </a></li>
+                   <br>
+                    <li><a href="admin-home.html">Les Chefs</a></li>
+                    <li><a href="creer-recette.html">Ajouter</a></li>
+                    <li><a href="admin-home.html">Modifier/Supprimer</a></li>
+                    <br>
                     <li><a href="">Changer mon mot de passe</a></li>
                     <li><a href="deconnexion.html">Quitter</a></li>
                 <?php
                 } else {
                 ?>
                     <li><a href="admin.html">Connexion</a></li>
+                    <li><a href="inscription.html">Inscription</a></li>
                     <li><a href="Recette.html">Recette</a></li>
                     <li><a href="chef.html">Chefs</a></li>
 
@@ -47,6 +52,7 @@
 
     <script src="<?= MEDIA; ?>/jquery/jquery-3.4.1.min.js"></script>
     <script src="<?= MEDIA; ?>/jquery/controle-formulaire.js"></script>
+    <script src="<?= MEDIA; ?>/jquery/script.js"></script>
 </body>
 
 </html>

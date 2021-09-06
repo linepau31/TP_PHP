@@ -7,12 +7,14 @@ class RecetteManager {
 	public function CreateRecette(Recette $recette) {
 		$cnx = $this->Connexion();
 		$sql = 'INSERT INTO recette
-			   (titre,chef,descriptif,keywords) VALUES (:titre,:chef,:descriptif,:keywords)';
+			   (titre,chef,descriptif,ingredient,etapes,keywords) VALUES (:titre,:chef,:descriptif, :ingredient, :etapes, :keywords)';
 		$rs_createRecette = $cnx->prepare($sql);
 		$rs_createRecette->bindValue(':titre', $recette->getTitre(), PDO::PARAM_STR);
 		$rs_createRecette->bindValue(':chef', $recette->getChef(), PDO::PARAM_STR);
 		$rs_createRecette->bindValue(':descriptif', $recette->getDescriptif(), PDO::PARAM_STR);
-		$rs_createRecette->bindValue(':keywords', $recette->getKeywords(), PDO::PARAM_STR);	
+        $rs_createRecette->bindValue(':ingredient', $recette->getIngredient(), PDO::PARAM_STR);
+        $rs_createRecette->bindValue(':etapes', $recette->getEtapes(), PDO::PARAM_STR);
+		$rs_createRecette->bindValue(':keywords', $recette->getKeywords(), PDO::PARAM_STR);
 		$rs_createRecette->execute();
 	}
 		// FAIRE LES SUIVANTS
@@ -51,6 +53,8 @@ class RecetteManager {
 		$recette->setTitre($data['titre']);
 		$recette->setChef($data['chef']);
 		$recette->setDescriptif($data['descriptif']);
+        $recette->setEtapes($data['etapes']);
+        $recette->setIngredient($data['ingredient']);
 		$recette->setKeywords($data['keywords']);
 		
 		return $recette;
@@ -67,8 +71,12 @@ class RecetteManager {
 		
 		while($data = $rs_readAllRecette->fetch(PDO::FETCH_ASSOC)) {
 			$recette = new Recette();
+            $recette->setId_recette($data['id_recette']);
 			$recette->setTitre($data['titre']);
 			$recette->setChef($data['chef']);
+            $recette->setIngredient($data['ingredient']);
+            $recette->setEtapes($data['etapes']);
+            $recette->setKeywords($data['keywords']);
 			$recettes[] = $recette;
 		}
 		return $recettes;
@@ -80,14 +88,16 @@ class RecetteManager {
 /*************** MODIFICATION D'UNE RECETTE***************/	
 	public function UpdateRecette(Recette $recette) {
 		$cnx = $this->Connexion();
-		$sql = 'UPDATE recette SET titre = :titre, chef = :chef, descriptif = :descriptif, keywords = :keywords
+		$sql = 'UPDATE recette SET titre = :titre, chef = :chef, descriptif = :descriptif, etapes = :etapes , ingredient = :ingredient, keywords = :keywords
 			    WHERE id_recette = :id_recette';
 		$rs_updateRecette = $cnx->prepare($sql);
 		$rs_updateRecette->bindValue(':id_recette', $recette->getId_recette(), PDO::PARAM_INT);
 		$rs_updateRecette->bindValue(':titre', $recette->getTitre(), PDO::PARAM_STR);
 		$rs_updateRecette->bindValue(':chef', $recette->getChef(), PDO::PARAM_STR);
 		$rs_updateRecette->bindValue(':descriptif', $recette->getDescriptif(), PDO::PARAM_STR);
-		$rs_updateRecette->bindValue(':keywords', $recette->getKeywords(), PDO::PARAM_STR);	
+        $rs_updateRecette->bindValue(':etapes', $recette->getEtapes(), PDO::PARAM_STR);
+        $rs_updateRecette->bindValue(':ingredient', $recette->getIngredient(), PDO::PARAM_STR);
+		$rs_updateRecette->bindValue(':keywords', $recette->getKeywords(), PDO::PARAM_STR);
 		
 		$rs_updateRecette->execute();
 	}

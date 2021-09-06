@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$('#soumission').click(function() {
-		var retour = true;
+		let retour = true;
 		
 		if($('#pseudo').val()=='') {
 			$('#pseudo').css('border-color', 'red');
@@ -23,3 +23,5 @@ $(document).ready(function() {
 		return retour;
 	});
 });
+
+

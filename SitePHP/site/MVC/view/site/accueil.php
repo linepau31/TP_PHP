@@ -4,7 +4,8 @@
   		<?php
 		foreach ($recettes as $recette) {
 		?>
-  		<p><a class="lien" href="voir-recette_<?= $recette->getId_recette(); ?>.html"><?= $recette->getTitre(); ?><?= $recette->getPhoto(); ?></a></p>
+  		<p><a class="lien" href="voir-recette_<?= $recette->getId_recette(); ?>.html"><?= $recette->getTitre(); ?>
+              <br>  De : <?= $recette->getChef(); ?></a></p>
   		<?php
 		}
 		?>
