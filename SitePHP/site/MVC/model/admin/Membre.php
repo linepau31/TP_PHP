@@ -4,6 +4,7 @@ namespace model\admin;
 class Membre {
 	private $membreID;
 	private $pseudo;
+    private $mail;
 	private $password;
 	
 	public function getMembreID() {
@@ -12,6 +13,9 @@ class Membre {
 	public function getPseudo() {
 		return $this->pseudo;
 	}
+    public function getMail() {
+        return $this->getMail();
+    }
 	public function getPassword() {
 		return $this->password;
 	}
@@ -26,6 +30,11 @@ class Membre {
 			$this->pseudo = $pseudo;
 		}
 	}
+    public function setMail($mail) {
+        if(is_string($mail)) {
+            $this->mail = $mail;
+        }
+    }
 	public function setPassword($password) {
 		if(is_string($password)) {
 			$this->password = $password;

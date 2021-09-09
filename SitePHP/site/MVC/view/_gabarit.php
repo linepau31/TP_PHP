@@ -25,9 +25,6 @@
                     <li><a href="creer-recette.html">Ajouter</a></li>
                     <li><a href="admin-home.html">Modifier/Supprimer </a></li>
                    <br>
-                    <li><a href="admin-home.html">Les Chefs</a></li>
-                    <li><a href="creer-recette.html">Ajouter</a></li>
-                    <li><a href="admin-home.html">Modifier/Supprimer</a></li>
                     <br>
                     <li><a href="">Changer mon mot de passe</a></li>
                     <li><a href="deconnexion.html">Quitter</a></li>
@@ -35,9 +32,10 @@
                 } else {
                 ?>
                     <li><a href="admin.html">Connexion</a></li>
-                    <li><a href="inscription.html">Inscription</a></li>
-                    <li><a href="Recette.html">Recette</a></li>
-                    <li><a href="chef.html">Chefs</a></li>
+                    <li><a href="index.php">Recettes</a></li>
+                    <li><a href="index.php">Chefs</a></li>
+                    <li><a href="">Contact</a></li>
+
 
                 <?php
                 }

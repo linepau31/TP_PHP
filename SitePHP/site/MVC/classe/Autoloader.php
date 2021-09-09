@@ -14,10 +14,10 @@ class Autoloader {
 					$namespace = 'controller\site\Accueil';
 					$methode   = 'AfficherAccueil';
 					break;
-				case 'admin':
-					$namespace = 'controller\admin\Admin';	
-					$methode   = 'voirAdmin';
-					break;
+                case 'admin':
+                    $namespace = 'controller\admin\Admin';
+                    $methode   = 'voirAdmin';
+                    break;
 				case 'deconnexion':
 					$namespace = 'controller\admin\Admin';	
 					$methode   = 'seDeconnecter';
@@ -37,11 +37,12 @@ class Autoloader {
 				case 'supprimer-recette':
 					$namespace = 'controller\admin\Admin';	
 					$methode   = 'SupprimerRecette';
-					break;	
+					break;
 				case 'admin-home':
 					$namespace = 'controller\admin\Admin';	
 					$methode   = 'AfficherToutesLesRecettes';
-					break;	// chef
+					break;
+
 			}	
 		//*** Instanciation de la classe Rooter ***//	
 			$rooter = new classe\Rooter($namespace, $methode);

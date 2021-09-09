@@ -1,7 +1,9 @@
+
 <article>
     <h1>Connexion</h1>
     <div class="box">
         <?= $message; ?>
+
         <form method="post" action="" id="myForm">
             <p><input id="pseudo" type="text" name="pseudo" placeholder="Votre Pseudo" required /></p>
             <span class="erreurPseudo"></span>
@@ -47,7 +49,7 @@
 
             </div>
 
-            <a href=".php">Mot de passe oublié ?</a>
+            <a href="">Mot de passe oublié ?</a>
         </form>
     </div>
 </article>

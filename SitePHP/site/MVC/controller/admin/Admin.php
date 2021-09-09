@@ -5,9 +5,10 @@ use model\admin as ma;
 use model\site as ms;
 class Admin {
 
+
 /****************** ACCES A LA ZONE ADMIN ******************/
 	public function voirAdmin() {
-		if( (empty($_POST['pseudo'])) || (empty($_POST['password'])) ) {
+		if( (empty($_POST['pseudo'])) ||(empty($_POST['password'])) ) {
 			$manager = new ma\MembreManager();
 			$message = $manager->getMsg();
 			$view = new classe\View('admin', 'admin', 'Admin', 'Je suis la desc de l\'admin', 'clé admin 1, clé admin 2');
@@ -139,6 +140,8 @@ class Admin {
 /********************************************************/
 
 
+
+    /****************** DECONNEXION ******************/
 
 	public function seDeconnecter() {
 		$view = new classe\View('admin', 'deconnexion', 'Se déconnecter', 'Déconnexion de la zone admin', 'clé déconnecter 1, clé déconnecter 2');

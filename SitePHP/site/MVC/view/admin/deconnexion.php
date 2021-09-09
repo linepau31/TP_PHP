@@ -4,6 +4,6 @@ session_destroy();
 ?>
 <article>
     <div class="box">
-    <p>Vous êtes à présent déconnecté.</p>
+    <h1>Déconnecté !</h1>
     </div>
 </article>
